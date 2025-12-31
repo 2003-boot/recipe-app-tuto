@@ -3,7 +3,7 @@ import https from 'https';
 
 // Toutes les 14 minutes
 // Format : minute heure jour mois jour-de-semaine
-const job = cron.schedule('* * * * *', () => {
+const job = new cron.CronJob('* * * * *', () => {
   if (!process.env.API_URL) {
     console.error('API_URL is not defined in environment variables');
     return;
